@@ -22,7 +22,7 @@ main{
 }
 article {
   display: flex;
-  flex-wrap: wrap;
+  text-align:center;
   flex-direction: column;
   background-color: rgb(173, 173, 173);
   width: 100%;
