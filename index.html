@@ -1,26 +1,36 @@
-<html>
-  <head>
-    <title>Responesive</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css" type="text/css">
-  </head>
-  <body>
-    <header>
-      <h1>Blog</h1>
-    </header>
-    <main>
-      <article>
-        <h2 id="bl">Blog Post1</h2><br>
-        <div id="inco">
-          <p id="in">Introduction<p>
-          <p id="co">Core Content</p>
-      </div>
-      </article>
-    </main>
-    <footer>
-      <p id="ft"><br>
-        Blog 2024
-      </p>
-    </footer>
-  </body>
-</html>
+<a id="myButton" href="https://www.profitableratecpm.com/wvrw9kcx?key=a074347b428c824859c691523912096e" target="_blank">
+  Auto Click Me
+</a>
+
+<script>
+  const button = document.getElementById("myButton");
+
+  function handleClick(event) {
+    event.preventDefault(); // prevent default anchor behavior
+
+    console.log("Button clicked!");
+
+    // Open link manually
+    window.open(button.href, '_blank');
+
+    // Change to random background color
+    const randomColor = "#" + Math.floor(Math.random()*16777215).toString(16);
+    button.style.backgroundColor = randomColor;
+  }
+
+  // Auto-click every 2 seconds
+  const intervalId = setInterval(() => {
+    button.click(); // this still won't open a tab, just calls handleClick
+  }, 2000);
+
+  let clickCount = 0;
+  const maxClicks = 40;
+
+  button.addEventListener("click", () => {
+    clickCount++;
+    if (clickCount >= maxClicks) {
+      clearInterval(intervalId);
+      console.log("Stopped auto-clicking after", maxClicks, "clicks.");
+    }
+  });
+</script>
